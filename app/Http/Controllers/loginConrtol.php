@@ -23,10 +23,10 @@ class loginConrtol extends Controller
         if (Auth::attempt($data)) {
             //dd(Auth::user()->role);
             if (Auth::user()->role == "Admin") {
-                return Redirect('test-1');
+                return Redirect('/index');
             } elseif (Auth::user()->role == "User") {
 
-                return Redirect('user/dashboard');
+                return Redirect('/user/dashboard');
             }
         } else {
             return redirect('/');

@@ -214,7 +214,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data Sertifikat:</h6>
-                        <a class="collapse-item" href="test-1">All Data</a>
+                        <a class="collapse-item" href="/test-1">All Data</a>
                         <a class="collapse-item" href="/FormDataBaru">Tambah data</a>
                     </div>
                 </div>

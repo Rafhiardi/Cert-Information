@@ -19,6 +19,6 @@ class FilterRole
 if(Auth::check() && in_array(Auth::user()->role, $roles)){
         return $next($request);
     }
-    abort(403, 'FUCK YOU MOTHERFUCKER');
+    abort(403, 'Access Denied');
 }
 }

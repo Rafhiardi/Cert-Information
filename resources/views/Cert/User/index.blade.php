@@ -1,4 +1,4 @@
-@extends('Cert/User/layout')
+@extends('Cert/layout')
 
 @section('isi_content')
 
