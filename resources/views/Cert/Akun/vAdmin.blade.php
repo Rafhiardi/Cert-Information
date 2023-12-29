@@ -2,11 +2,11 @@
     @extends('Cert/layout')
 
     <div class="container mt-4">
-        <div class="card">
+        <div class="card shadow">
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="mb-0">Data Akun Admin</h5>
-                    <a href="" class="btn btn-success">
+                    <a href="{{ route('BuatAkun') }}" class="btn btn-success">
                         <i class="fas fa-plus"></i> Buat Akun
                     </a>
                 </div>
@@ -36,8 +36,8 @@
                                 <td>{{ $akun['role'] }}</td>
                                 <td>
                                     {{-- Add your options (buttons, links, etc.) here --}}
-                                    <a href="/admin/edit/{{ $akun['id'] }}" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="/admin/hapus/{{ $akun['id'] }}" class="btn btn-sm btn-danger">Hapus</a>
+                                    <a href="/vAdmin/edit/{{ $akun['id'] }}" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="/vAdmin/delete/{{ $akun['id'] }}" class="btn btn-sm btn-danger">Hapus</a>
                                 </td>
                             </tr>
                         @endforeach

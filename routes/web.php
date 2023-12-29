@@ -17,12 +17,11 @@ use App\Http\Controllers\loginConrtol;
 |
 */
 
-route::get("/add", function(){
-    return view("Cert/Akun/Admin");
-});
-route::get('/vAdmin',[ControllAkun::class,'DataAdmin']);
+//route::get("/add", function(){return view("Cert/Akun/Admin");});
 
-Route::get('/chart-1', [Controller01::class, 'chart'])->name('chart-1');
+//route::get('/vAdmin',[ControllAkun::class,'DataAdmin'])->name('/akun/admin');
+
+//Route::get('/chart-1', [Controller01::class, 'chart'])->name('chart-1');
 
 
 
@@ -44,6 +43,15 @@ Route::middleware(['FilterRole:Admin'])->group(function () {
         route::get('/detailCert/{token}/edit', 'editData');
         route::post('/updateData/{token}', 'updateData');
         route::get('/hapusData/{token}', 'hapusData');
+    });
+    Route::controller(ControllAkun::class)->group(function(){
+
+        route::get('/vAdmin', 'DataAdmin')->name('akun/admin');
+        Route::get('/vAdmin/add','BuatAkun')->name('BuatAkun');
+        route::post('/vAdmin/add/proses', 'AddDataAkun')->name('admin/add');
+        Route::get('/vAdmin/edit/{id}','EditAkun')->name('EditAkun');
+        route::post('/admin/update/{id}', 'UpdateDataAkun');
+        Route::get('/vAdmin/delete/{id}','DeleteDataAkun')->name('DeleteAkun');
     });
 });
 //route user
