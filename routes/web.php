@@ -3,6 +3,7 @@
 use App\Http\Controllers\Cert\User\indexUser;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Cert\Controller01;
+use App\Http\Controllers\ControllAkun;
 use App\Http\Controllers\loginConrtol;
 
 /*
@@ -15,6 +16,11 @@ use App\Http\Controllers\loginConrtol;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+route::get("/add", function(){
+    return view("Cert/Akun/Admin");
+});
+route::get('/vAdmin',[ControllAkun::class,'DataAdmin']);
 
 Route::get('/chart-1', [Controller01::class, 'chart'])->name('chart-1');
 
