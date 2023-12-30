@@ -43,7 +43,7 @@
                         </form>
                     </div>
                 </div>
-                Versi : 0.0.0-Alpha (Ujicoba Internal)
+                Versi : 0.6.12-Alpha (Ujicoba Internal)
             </div>
         </div>
     </div>

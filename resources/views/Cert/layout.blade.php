@@ -233,7 +233,7 @@
                         <h6 class="collapse-header">Account:</h6>
                         <a class="collapse-item" href="/vUser">Tambah User</a>
                         <a class="collapse-item" href="/vAdmin">Tambah Admin</a>
-                        <h6 class="collapse-header">Tools</h6>
+                        <h6 class="collapse-header">Config</h6>
                         <a class="collapse-item" href="#">DataTable (Soon)</a>
                     </div>
                 </div>
@@ -295,7 +295,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <h5>versi: <span class="badge bg-secondary text-white">v0.0.0-Alpha</span></h5>
+                    <h5>versi: <span class="badge bg-primary text-white">v0.6.12-Alpha</span></h5>
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -368,7 +368,7 @@
             <footer class="sticky-footer bg-white shadow-lg">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span><strong> Engine Status : <span class="badge bg-secondary text-white">Offline</span>
+                        <span><strong> Engine Status : <span class="badge bg-success text-white">Online</span>
                             </strong></span>
 
                     </div>
