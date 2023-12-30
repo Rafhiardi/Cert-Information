@@ -20,19 +20,32 @@ class ControllAkun extends Controller
     //form user
     public function DataUser()
     {
-        $user = Userr::where('role', "User")->firstOrFail();
+        $user = Userr::where('role', 'User')->paginate(5);
+        //dd($user);
         return view("Cert/Akun/vUser", [
-            "data" => $user,
+            'data' => $user,
         ]);
     }
-    public function BuatAkun()
+    public function BuatAkun($role)
     {
-        return view('Cert/Akun/Admin');
+        if ($role == 'Admin') {
+            return view('Cert/Akun/Admin');
+        } else {
+            return view('Cert/Akun/User');
+        }
     }
     public function EditAkun(request $request, $id)
     {
         $user = Userr::where('id', $id)->firstOrFail();
         return view('Cert/Akun/EditAdmin', [
+            'data' => $user,
+        ]);
+    }
+
+    public function EditAkunUser(request $request, $id)
+    {
+        $user = Userr::where('id', $id)->firstOrFail();
+        return view('Cert/Akun/EditUser', [
             'data' => $user,
         ]);
     }
@@ -53,7 +66,11 @@ class ControllAkun extends Controller
         } else {
             return redirect(404);
         }
-        return redirect()->route("akun/admin")->with("success", "Akun Berhasil dibuat");
+        if ($request->role == 'Admin') {
+            return redirect()->route("akun/admin")->with("success", "Akun Berhasil dibuat");
+        } else {
+            return redirect()->route("vUser")->with("Success", "akun user berhasil di buat");
+        }
     }
     public function DeleteDataAkun(Request $request, $id)
     {
@@ -66,9 +83,6 @@ class ControllAkun extends Controller
             $data->delete();
             return redirect('vUser');
         }
-    }
-    public function EditDataAkun(Request $request)
-    {
     }
     public function UpdateDataAkun(Request $request, $id)
     {
@@ -87,5 +101,23 @@ class ControllAkun extends Controller
             $data->update();
         }
         return redirect('/vAdmin');
+    }
+    public function UpdateDataUser(Request $request, $id)
+    {
+        $pass = $request->password;
+
+        if ($pass == Null) {
+            $data = Userr::where('id', $id)->firstOrFail();
+            $data->name = $request->nama;
+            $data->email = $request->email;
+            $data->update();
+        } else {
+            $data = Userr::where('id', $id)->firstOrFail();
+            $data->name = $request->nama;
+            $data->email = $request->email;
+            $data->password = bcrypt($request->password);
+            $data->update();
+        }
+        return redirect('/vUser');
     }
 }

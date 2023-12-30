@@ -2,11 +2,11 @@
     @extends('Cert/layout')
 
     <div class="container mt-4">
-        <div class="card">
+        <div class="card shadow">
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Data Akun Admin</h5>
-                    <a href="" class="btn btn-success">
+                    <h5 class="mb-0">Data Akun User</h5>
+                    <a href="{{ route('BuatAkun',[$role = 'User']) }}" class="btn btn-success">
                         <i class="fas fa-plus"></i> Buat Akun
                     </a>
                 </div>
@@ -28,16 +28,16 @@
                         @php
                             $i = 1;
                         @endphp
-                        @foreach ($data as $akun)
+                        @foreach ($data as $dtx)
                             <tr>
                                 <th scope="row">{{ $i++ }}</th>
-                                <td>{{ $akun['name'] }}</td>
-                                <td>{{ $akun['email'] }}</td>
-                                <td>{{ $akun['role'] }}</td>
+                                <td>{{ $dtx['name'] }}</td>
+                                <td>{{ $dtx['email'] }}</td>
+                                <td>{{ $dtx['role'] }}</td>
                                 <td>
                                     {{-- Add your options (buttons, links, etc.) here --}}
-                                    <a href="/admin/edit/{{ $akun['id'] }}" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="/admin/hapus/{{ $akun['id'] }}" class="btn btn-sm btn-danger">Hapus</a>
+                                    <a href="/vUser/edit/{{ $dtx['id'] }}" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="/vUser/delete/{{ $dtx['id'] }}" class="btn btn-sm btn-danger">Hapus</a>
                                 </td>
                             </tr>
                         @endforeach

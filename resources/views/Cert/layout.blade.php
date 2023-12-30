@@ -231,10 +231,10 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Account:</h6>
-                        <a class="collapse-item" href="">Tambah User</a>
-                        <a class="collapse-item" href="">Tambah Admin</a>
-                        <h6 class="collapse-header">Data Account:</h6>
-                        <a class="collapse-item" href="">Soon</a>
+                        <a class="collapse-item" href="/vUser">Tambah User</a>
+                        <a class="collapse-item" href="/vAdmin">Tambah Admin</a>
+                        <h6 class="collapse-header">Tools</h6>
+                        <a class="collapse-item" href="#">DataTable (Soon)</a>
                     </div>
                 </div>
             </li>

@@ -6,7 +6,7 @@
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="mb-0">Data Akun Admin</h5>
-                    <a href="{{ route('BuatAkun') }}" class="btn btn-success">
+                    <a href="{{ route('BuatAkun', [$role = 'Admin']) }}" class="btn btn-success">
                         <i class="fas fa-plus"></i> Buat Akun
                     </a>
                 </div>
