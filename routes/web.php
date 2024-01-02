@@ -66,7 +66,7 @@ Route::middleware(['FilterRole:User'])->group(function () {
     Route::controller(indexUser::class)->group(function () {
         Route::get('/user/dashboard', 'index');
         Route::get('user/detailCert/{token}', 'UserDetailCert');
-        Route::get('/lihatPDF/{file}', 'viewCert');
-        Route::get('/search', 'userCari');
+        Route::get('/lihatPDFu/{file}', 'viewCert');
+        Route::get('/searchUser', 'userCari');
     });
 });
